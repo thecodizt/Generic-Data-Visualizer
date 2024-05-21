@@ -18,6 +18,8 @@ def visualize_node_data(node_data):
 
     # Filter the dataframe based on the selected node
     filtered_df = df[df['node'] == selected_node]
+    
+    st.dataframe(filtered_df)
 
     # Create a line plot for each feature
     fig = px.line(filtered_df, x='timestamp', y='value', color='feature', title=f'Features over Time for Node {selected_node}', width=650, height=500)
@@ -41,6 +43,8 @@ def visualize_edge_data(edge_data):
 
     # Filter the dataframe based on selected feature and timestamp
     filtered_df = df[(df['feature'] == selected_feature) & (df['timestamp'] == selected_timestamp)]
+    
+    st.dataframe(filtered_df)
 
     # Create a directed graph
     G = nx.DiGraph()
