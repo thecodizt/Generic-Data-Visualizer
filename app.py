@@ -19,14 +19,14 @@ def main():
     if node_data_file:
         st.header("Visualize Node Data")
         
-        node_data = pd.read_csv(node_data_file)
+        node_data = pd.read_csv(node_data_file, index_col=0)
         
         visualize_node_data(node_data=node_data)
         
     if edge_data_file:
         st.header("Visualize Edge Data")
         
-        edge_data = pd.read_csv(edge_data_file)
+        edge_data = pd.read_csv(edge_data_file, index_col=0)
         
         visualize_edge_data(edge_data=edge_data)
     
